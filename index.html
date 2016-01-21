@@ -6,79 +6,59 @@
 		
 		<style>
 		
-			body
-			{
-			  	font: 10px arial;
+			body {
+			   	font: 10px arial;
 			}
+
+			path.line {
+			  fill: none;
+			  stroke: #666;
+			  stroke-width: 1.5px;
+			}
+
+			path.area {
+			  fill: #e7e7e7;
+			}
+
+			.axis {
+			  shape-rendering: crispEdges;
+			}
+
+			.x.axis line {
+			  stroke: #fff;
+			}
+
+			.x.axis .minor {
+			  stroke-opacity: .5;
+			}
+
+			.x.axis path {
+			  display: none;
+			}
+
+			.y.axis line, .y.axis path {
+			  fill: none;
+			  stroke: #000;
+			}
+
+			.guideline {
+			  margin-right: 100px;
+			  float: right;
+			}			
 			
 		</style>
 		
 		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
 		<script type="text/javascript" src="gauge.js"></script>
-
-		<script>
-						
-				
-			var gauges = [];
-			
-			function createGauge(name, label, min, max, minorTicks)
-			{
-				var config = 
-				{
-					size: 120,
-					label: label,
-					min: undefined != min ? min : 0,
-					max: undefined != max ? max : 100,
-					minorTicks: undefined != minorTicks ? minorTicks : 5,
-				}
-				
-				var range = config.max - config.min;
-				config.yellowZones = [{ from: config.min + range*0.33, to: config.min + range*0.66 }];
-				config.redZones = [{ from: config.min + range*0.66, to: config.max }];
-				
-				gauges[name] = new Gauge(name + "GaugeContainer", config);
-				gauges[name].render();
-			}
-			
-			function createGauges()
-			{
-				createGauge("attention", "Attention");
-				// createGauge("meditation", "Meditation");
-				// createGauge("familiarity", "Familiarity",0,5,1);
-				//createGauge("test", "Test", -50, 50 );
-			}
-			
-			var i = 0;
-
-			function updateGauges()
-			{
-				var attentionValues = [45,50,55.46,47,48,49,50,30,31,60];
-				var value = attentionValues[i%attentionValues.length];
-				gauges["attention"].redraw(value);
-				i += 1;
-			}
-			
-			function getRandomValue(gauge)
-			{
-				
-				var overflow = 0; //10;
-				return gauge.config.min - overflow + (gauge.config.max - gauge.config.min + overflow*2) *  Math.random();
-			}
-			
-			function initialize()
-			{
-				
-				createGauges();
-				setInterval(updateGauges, 1000);
-			}
-			
-		</script>
+		<script type="text/javascript" src="gaugeModel.js"></script>
+		<script type="text/javascript" src="line.js"></script>
+		<script type="text/javascript" src="lineModel.js"></script>
 		
 		
 	</head>
 	
 	<body onload="initialize()">
-		<iframe src="https://rocket.quickenloans.com/"></iframe>
+		<svg id="visualisation" width="1000" height="500"></svg>
 		<span id="attentionGaugeContainer"></span>
 		<span id="meditationGaugeContainer"></span>
 		<span id="familiarityGaugeContainer"></span>
