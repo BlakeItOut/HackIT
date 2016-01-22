@@ -9,5 +9,4 @@ $(document).ready(function (e) {
             var viewName = $(this).attr('data-launch-view');
             showView(viewName);
         });
-
     });
