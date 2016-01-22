@@ -79,7 +79,7 @@ function getGraph5Data() {
         attentionValue = attentionValues[i][2];   
         d1.push([i, attentionValue]);
         attention2Value = attention2Values[i][2];   
-        d1.push([i, attention2Value]);
+        d2.push([i, attention2Value]);
       }
 
       data.push(d1);

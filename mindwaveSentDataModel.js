@@ -77,32 +77,6 @@
         			})
     				// setInterval(updateGauges, 850);        			
 				})
-
-				d3.text("attention2.csv", function(text) {
-    				attentionValues = d3.csv.parseRows(text)
-        			getGraphData();
-        			getGraph5Data();
-        			getGraph7Data();
-        			var sum = 0;
-        			for (var i=0; i < attentionValues.length; i++) {
-        				sum += parseFloat(attentionValues[i][2]);
-        			}
-        			attentionValuesAverage = Math.round(sum/attentionValues.length)
-        			d3.text("appreciation2.csv", function(text) {
-	    				appreciationValues = d3.csv.parseRows(text)
-	    				getGraph2Data();
-	    				getGraph6Data();
-	    				getGraph8Data();
-	    				var sum = 0;
-	        			for (var i=0; i < appreciationValues.length; i++) {
-	        				sum += parseFloat(appreciationValues[i][2]);
-	        			}
-	        			appreciationValuesAverage = sum/appreciationValues.length;
-	        			updateGauges();
-        			})
-    				// setInterval(updateGauges, 850);        			
-				})
-        			
         
 
 				d3.text("familiarity.csv", function(text) {
