@@ -6,13 +6,17 @@
 			var attentionGroupValues;
 			var appreciationGroupValuesAverage;
 			var attentionGroupValuesAverage;
+			var appreciation2Values;
+			var attention2Values;
+			var appreciation2ValuesAverage;
+			var attention2ValuesAverage;
 			 //csv dataset as objects	
 
 			function getData() {
 				$("#div1").removeClass("hide");
 				window.location.href = "#contact";
 
-				d3.text("attention.csv", function(text) {
+				d3.text("attention1.csv", function(text) {
     				attentionValues = d3.csv.parseRows(text)
         			getGraphData();
         			var sum = 0;
@@ -20,7 +24,7 @@
         				sum += parseFloat(attentionValues[i][2]);
         			}
         			attentionValuesAverage = Math.round(sum/attentionValues.length)
-        			d3.text("appreciation.csv", function(text) {
+        			d3.text("appreciation1.csv", function(text) {
 	    				appreciationValues = d3.csv.parseRows(text)
 	    				getGraph2Data();
 	    				var sum = 0;
@@ -43,12 +47,15 @@
 			        			for (var i=0; i < appreciation2Values.length; i++) {
 			        				sum += parseFloat(appreciation2Values[i][2]);
 			        			}
-			        			appreciationValuesAverage = sum/appreciation2Values.length;
+			        			appreciation2ValuesAverage = sum/appreciation2Values.length;
 	        					updateGauges();
-	        				}
+	        				})
+	        			})
+
+	        		// setInterval(updateGauges, 850); 
 	        		})
-    				// setInterval(updateGauges, 850);        			
 				})
+    				     
 
 				d3.text("attention-avg.csv", function(text) {
     				attentionGroupValues = d3.csv.parseRows(text)
