@@ -20,34 +20,34 @@
     				attentionValues = d3.csv.parseRows(text)
         			getGraphData();
         			var sum = 0;
-        			for (var i=0; i < attentionValues.length; i++) {
-        				sum += parseFloat(attentionValues[i][2]);
+        			for (var i=0; i < 30; i++) {
+        				sum += parseFloat(attentionValues[(attentionValues.length-31)+i][2]);
         			}
-        			attentionValuesAverage = Math.round(sum/attentionValues.length)
+        			attentionValuesAverage = Math.round(sum/30)
         			d3.text("appreciation.csv", function(text) {
 	    				appreciationValues = d3.csv.parseRows(text)
 	    				getGraph2Data();
 	    				var sum = 0;
-	        			for (var i=0; i < appreciationValues.length; i++) {
-	        				sum += parseFloat(appreciationValues[i][2]);
+	        			for (var i=0; i < 30; i++) {
+	        				sum += parseFloat(appreciationValues[(appreciationValues.length-31)+i][2]);
 	        			}
-	        			appreciationValuesAverage = sum/appreciationValues.length;
+	        			appreciationValuesAverage = sum/30;
 	        			d3.text("attention2.csv", function(text) {
 		    				attention2Values = d3.csv.parseRows(text)
 		        			getGraph5Data();
 		        			var sum = 0;
-		        			for (var i=0; i < attention2Values.length; i++) {
-		        				sum += parseFloat(attention2Values[i][2]);
+		        			for (var i=0; i < 30; i++) {
+		        				sum += parseFloat(attention2Values[(attention2Values.length-31)+i][2]);
 		        			}
-		        			attention2ValuesAverage = Math.round(sum/attention2Values.length)
+		        			attention2ValuesAverage = Math.round(sum/30)
 		        			d3.text("appreciation2.csv", function(text) {
 			    				appreciation2Values = d3.csv.parseRows(text)
 			    				getGraph6Data();
 			    				var sum = 0;
-			        			for (var i=0; i < appreciation2Values.length; i++) {
-			        				sum += parseFloat(appreciation2Values[i][2]);
+			        			for (var i=0; i < 30; i++) {
+			        				sum += parseFloat(appreciation2Values[(appreciation2Values.length-31)+i][2]);
 			        			}
-			        			appreciation2ValuesAverage = sum/appreciation2Values.length;
+			        			appreciation2ValuesAverage = sum/30;
 	        					updateGauges();
 	        				})
 	        			})
@@ -61,18 +61,18 @@
     				attentionGroupValues = d3.csv.parseRows(text)
         			getGraph3Data();
         			var sum = 0;
-        			for (var i=0; i < attentionGroupValues.length; i++) {
-        				sum += parseFloat(attentionGroupValues[i][2]);
+        			for (var i=0; i < 30; i++) {
+        				sum += parseFloat(attentionGroupValues[(attentionGroupValues.length-31)+i][2]);
         			}
-        			attentionGroupValuesAverage = Math.round(sum/attentionGroupValues.length)
+        			attentionGroupValuesAverage = Math.round(sum/30)
         			d3.text("appreciation-avg.csv", function(text) {
 	    				appreciationGroupValues = d3.csv.parseRows(text)
 	    				getGraph4Data();
 	    				var sum = 0;
-	        			for (var i=0; i < appreciationGroupValues.length; i++) {
-	        				sum += parseFloat(appreciationGroupValues[i][2]);
+	        			for (var i=0; i < 30; i++) {
+	        				sum += parseFloat(appreciationGroupValues[(appreciationGroupValues.length-31)+i][2]);
 	        			}
-	        			appreciationGroupValuesAverage = sum/appreciationGroupValues.length;
+	        			appreciationGroupValuesAverage = sum/30;
 	        			updateGauges();
         			})
     				// setInterval(updateGauges, 850);        			

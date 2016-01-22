@@ -309,15 +309,15 @@ var gauges = [];
 				gauges["appreciationGroupAverage"].redraw(appreciationGroupValuesAverage)
 				gauges["attention1Average"].redraw(attentionValuesAverage)
 				gauges["appreciation1Average"].redraw(appreciationValuesAverage)
-				gauges["attention2Average"].redraw(attentionValuesAverage)
-				gauges["appreciation2Average"].redraw(appreciationValuesAverage)
+				gauges["attention2Average"].redraw(attention2ValuesAverage)
+				gauges["appreciation2Average"].redraw(appreciation2ValuesAverage)
 				
 			}
 
 			function updateLiveGauges() {
-				var value = attentionValues[i][2];
+				var value = attentionValues[(attentionValues.length-31)+i][2];
 				gauges["attention"].redraw(value);
-				var value2 = appreciationValues[i][2];
+				var value2 = appreciationValues[(appreciationValues.length-31)+i][2];
 				gauges["appreciation"].redraw(value2);
 				i += 1;
 			}

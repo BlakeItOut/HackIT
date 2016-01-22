@@ -2,7 +2,7 @@ function getGraph3Data() {
     var data = [];
     var bandPos = [-1, -1];
     var pos;
-    var xdomain = 50;
+    var xdomain = 30;
     var ydomain = 100;
     var colors = ["steelblue", "green"];
 
@@ -76,7 +76,7 @@ function getGraph3Data() {
       var d1 = [];
       var d2 = [];
       for (var i = 0; i <= xdomain; i++) {
-        attentionValue = attentionGroupValues[i][2];   
+        attentionValue = attentionGroupValues[(attentionGroupValues.length-31)+i][2];   
         d1.push([i, attentionValue]);
       }
 

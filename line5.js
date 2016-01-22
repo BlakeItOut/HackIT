@@ -2,7 +2,7 @@ function getGraph5Data() {
     var data = [];
     var bandPos = [-1, -1];
     var pos;
-    var xdomain = 50;
+    var xdomain = 30;
     var ydomain = 100;
     var colors = ["steelblue", "green"];
 
@@ -76,9 +76,9 @@ function getGraph5Data() {
       var d1 = [];
       var d2 = [];
       for (var i = 0; i <= xdomain; i++) {
-        attentionValue = attentionValues[i][2];   
+        attentionValue = attentionValues[(attentionValues.length-31)+i][2];   
         d1.push([i, attentionValue]);
-        attention2Value = attention2Values[i][2];   
+        attention2Value = attention2Values[(attention2Values.length-31)+i][2];   
         d2.push([i, attention2Value]);
       }
 

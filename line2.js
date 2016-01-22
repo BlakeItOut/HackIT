@@ -2,7 +2,7 @@ function getGraph2Data() {
     var data = [];
     var bandPos = [-1, -1];
     var pos;
-    var xdomain = 50;
+    var xdomain = 30;
     var ydomain = 4;
     var colors = ["steelblue", "green"];
 
@@ -76,7 +76,7 @@ function getGraph2Data() {
       var d1 = [];
       var d2 = [];
       for (var i = 0; i <= xdomain; i++) {
-        appreciationValue = appreciationValues[i][2];   
+        appreciationValue = appreciationValues[(appreciationValues.length-31)+i][2];   
         d1.push([i, appreciationValue]);
       }
 
