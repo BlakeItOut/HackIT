@@ -261,20 +261,22 @@ function Gauge(placeholderName, configuration)
 }
 var gauges = [];
 			
-			function createGauge(name, label, min, max, minorTicks)
+			function createGauge(name, label, min, max, minorTicks, majorTicks, lowTop, midTop)
 			{
 				var config = 
 				{
-					size: 120,
+					size: 100,
 					label: label,
 					min: undefined != min ? min : 0,
 					max: undefined != max ? max : 100,
-					minorTicks: undefined != minorTicks ? minorTicks : 5,
+					minorTicks: undefined != minorTicks ? minorTicks : 2,
+					majorTicks: undefined != majorTicks ? majorTicks : 5,
 				}
 				
 				var range = config.max - config.min;
-				config.yellowZones = [{ from: config.min + range*0.33, to: config.min + range*0.66 }];
-				config.redZones = [{ from: config.min + range*0.66, to: config.max }];
+				config.redZones = [{ from: 0, to: config.min + range*lowTop }];
+				config.yellowZones = [{ from: config.min + range*lowTop, to: config.min + range*midTop }];
+				config.greenZones = [{ from: config.min + range*midTop, to: config.max }];
 				
 				gauges[name] = new Gauge(name + "GaugeContainer", config);
 				gauges[name].render();
@@ -282,7 +284,11 @@ var gauges = [];
 			
 			function createGauges()
 			{
-				createGauge("attention", "Attention");
+				// createGauge("attention", "Attention");
+				createGauge("attentionAverage", "",0,100,2,6,.4,.8);
+				createGauge("appreciationAverage", "",0,4,2,5,.5,.75);
+				createGauge("attentionGroupAverage", "",0,100,2,6,.4,.8);
+				createGauge("appreciationGroupAverage", "",0,4,2,5,.5,.75);
 				// createGauge("meditation", "Meditation");
 				// createGauge("familiarity", "Familiarity",0,5,1);
 				//createGauge("test", "Test", -50, 50 );
@@ -292,8 +298,14 @@ var gauges = [];
 
 			function updateGauges()
 			{
-				var value = attentionValues[i].Value;
-				gauges["attention"].redraw(value);
+				var value = attentionValues[i][2];
+				// gauges["attention"].redraw(value);
+				console.log(attentionValuesAverage);
+				console.log(appreciationValuesAverage);
+				gauges["attentionAverage"].redraw(attentionValuesAverage)
+				gauges["appreciationAverage"].redraw(appreciationValuesAverage)
+				gauges["attentionGroupAverage"].redraw(attentionValuesAverage)
+				gauges["appreciationGroupAverage"].redraw(appreciationValuesAverage)
 				i += 1;
 			}
 			

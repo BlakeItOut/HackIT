@@ -1,9 +1,9 @@
-function getGraphData() {
+function getGraph4Data() {
     var data = [];
     var bandPos = [-1, -1];
     var pos;
     var xdomain = 50;
-    var ydomain = 100;
+    var ydomain = 4;
     var colors = ["steelblue", "green"];
 
     var margin = {
@@ -24,7 +24,7 @@ function getGraphData() {
 
     //data for testing
     
-    var svg = d3.select("#graph").append("svg")
+    var svg = d3.select("#graph4").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -76,8 +76,8 @@ function getGraphData() {
       var d1 = [];
       var d2 = [];
       for (var i = 0; i <= xdomain; i++) {
-        attentionValue = attentionValues[i][2];   
-        d1.push([i, attentionValue]);
+        appreciationValue = appreciationValues[i][2];   
+        d1.push([i, appreciationValue]);
       }
 
       data.push(d1);

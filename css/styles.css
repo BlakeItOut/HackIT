@@ -271,16 +271,21 @@ ul {
   padding: 10px;
 }
 
+td {
+  text-align:center;
+  margin: 10px;
+}
+
 .modal-fit .modal-body {
   max-height: calc(200vh - 400px);
   overflow: auto;
 }
 
-.axis path, .axis line {
-                  fill: none;
-              stroke: #000;
-              shape-rendering: crispEdges;
-        }
+.axis path .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
         path.line {
             fill: none;
             stroke-width: 1px;
@@ -306,3 +311,4 @@ ul {
           margin-right: 100px;
         float: right;
         }     
+
