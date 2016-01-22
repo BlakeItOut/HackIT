@@ -100,28 +100,28 @@ function getGraph7Data() {
           .attr("d", line);
       }
 
-      // var curtain = svg.append('rect')
-      //   .attr('x', -1 * 760)
-      //   .attr('y', -1 * 450)
-      //   .attr('height', 450)
-      //   .attr('width', 760)
-      //   .attr('class', 'curtain')
-      //   .attr('transform', 'rotate(180)')
-      //   .style('fill', '#ffffff')
+      var curtain = svg.append('rect')
+        .attr('x', -1 * 760)
+        .attr('y', -1 * 450)
+        .attr('height', 450)
+        .attr('width', 760)
+        .attr('class', 'curtain')
+        .attr('transform', 'rotate(180)')
+        .style('fill', '#ffffff')
 
-      // var t = svg.transition()
-      //     .delay(0)
-      //     .duration(attentionValues.length*1000)
-      //     .ease('linear')
-      //     .each('end', function() {
-      //       d3.select('line.guide')
-      //         .transition()
-      //         .style('opacity', 0)
-      //         .remove()
-      //     });
+      var t = svg.transition()
+          .delay(0)
+          .duration(attentionValues.length*1000)
+          .ease('linear')
+          .each('end', function() {
+            d3.select('line.guide')
+              .transition()
+              .style('opacity', 0)
+              .remove()
+          });
 
-      // t.select('rect.curtain')
-      //     .attr('width', 0);
+      t.select('rect.curtain')
+          .attr('width', 0);
     
 
   

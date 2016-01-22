@@ -47,7 +47,7 @@ function getGraph6Data() {
 
     svg.append("text")
       .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
-      .attr("transform", "translate("+(width/2)+","+(height-(margin.bottom/3))+")")  // centre below axis
+      .attr("transform", "translate(200,250)")  // centre below axis
       .text("Time (s)");
     
     var band = svg.append("rect")

@@ -284,7 +284,8 @@ var gauges = [];
 			
 			function createGauges()
 			{
-				// createGauge("attention", "Attention");
+				createGauge("attention", "",0,100,2,6,.4,.8);
+				createGauge("appreciation", "",0,4,2,5,.5,.75);
 				createGauge("attentionAverage", "",0,100,2,6,.4,.8);
 				createGauge("appreciationAverage", "",0,4,2,5,.5,.75);
 				createGauge("attentionGroupAverage", "",0,100,2,6,.4,.8);
@@ -302,8 +303,6 @@ var gauges = [];
 
 			function updateGauges()
 			{
-				var value = attentionValues[i][2];
-				// gauges["attention"].redraw(value);
 				gauges["attentionAverage"].redraw(attentionValuesAverage)
 				gauges["appreciationAverage"].redraw(appreciationValuesAverage)
 				gauges["attentionGroupAverage"].redraw(attentionGroupValuesAverage)
@@ -312,6 +311,14 @@ var gauges = [];
 				gauges["appreciation1Average"].redraw(appreciationValuesAverage)
 				gauges["attention2Average"].redraw(attentionValuesAverage)
 				gauges["appreciation2Average"].redraw(appreciationValuesAverage)
+				
+			}
+
+			function updateLiveGauges() {
+				var value = attentionValues[i][2];
+				gauges["attention"].redraw(value);
+				var value2 = appreciationValues[i][2];
+				gauges["appreciation"].redraw(value2);
 				i += 1;
 			}
 			

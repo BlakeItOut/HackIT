@@ -56,6 +56,9 @@
               #menu3{
                 text-align: center;
               }
+              #menu4{
+                text-align: center;
+              }
         	   #home{
         	  	text-align: center;
         	  }
@@ -143,6 +146,7 @@ src="https://www.youtube.com/embed/pUjezPJGRIE?autoplay=false">
    <!--  <li><a data-toggle="tab" href="#menu1">Menu 1</a></li> -->
     <li><a data-toggle="tab" href="#menu2">Group</a></li>
     <li><a data-toggle="tab" href="#menu3">Comparison</a></li>
+    <li><a data-toggle="tab" href="#menu4">Instant Replay</a></li>
   </ul>
 
   <div class="tab-content">
@@ -189,6 +193,28 @@ src="https://www.youtube.com/embed/pUjezPJGRIE?autoplay=false">
             <div class="col-md-12" id ="graph6"></div>
         </div>
     </div>
+    <div id="menu4" class="tab-pane fade">
+        <button id="replayButton" onclick="getReplay()">Replay</button>
+        <div class="col-md-4">
+            <video width="400px" height="400px" id="myVideo">
+                <source src="movie.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">Attention</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><span id="attentionGaugeContainer"></span></div><div class="col-md-8" id ="graph7"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">Appreciation</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><span id="appreciationGaugeContainer"></span></div><div class="col-md-8" id ="graph8"></div>
+            </div>
+        </div>          
+    </div>
   </div>
 </div>
 
@@ -230,6 +256,7 @@ src="https://www.youtube.com/embed/pUjezPJGRIE?autoplay=false">
         <script type="text/javascript" src="line7.js"></script>
         <script type="text/javascript" src="line8.js"></script>
 		<script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="InstantReplay.js"></script>
 		<script type="text/javascript" src="mindwaveSentDataModel.js"></script>
 		    <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
