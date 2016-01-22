@@ -9,5 +9,5 @@ $(document).ready(function (e) {
             var viewName = $(this).attr('data-launch-view');
             showView(viewName);
         });
-
+        var app = angular.module('app', ['ui.bootstrap']);
     });

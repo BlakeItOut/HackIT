@@ -43,34 +43,39 @@
 	</head>
 	
 	<body onload="initialize()">
-		<!DOCTYPE html>
- 
-	<div id="lotOfPages">
-		<button id="showPage1Btn" data-launch-view="page1">Page 1</button>
-    	<button id="showPage2Btn" data-launch-view="page2">Page 2</button>
-    	<button id="showPage3Btn" data-launch-view="page3">Page 3</button>
+ 		<div class="btn-group" uib-dropdown>
+      		<button id="split-button" type="button" class="btn btn-default btn-lg" uib-dropdown-toggle>Analysis?</button>
+     		<ul class="uib-dropdown-menu" role="menu" aria-labelledby="split-button">
+        		<li role="menuitem"><a ng-click="openE()">Rocket Mortgage Ad</a></li>
+        		<li role="menuitem"><a ng-click="closeE()">MyQL</a></li>
+      		</ul>
+    	</div>
+		<div id="lotOfPages">
+			<button id="showPage1Btn" data-launch-view="page1">Page 1</button>
+	    	<button id="showPage2Btn" data-launch-view="page2">Page 2</button>
+	    	<button id="showPage3Btn" data-launch-view="page3">Page 3</button>
 
-	    <div class="view" id="page1">
-	            <h1>Page 1</h1>
-	            <div id="graph"></div>
-				<span id="attentionGaugeContainer"></span>
-				<span id="meditationGaugeContainer"></span>
-				<span id="familiarityGaugeContainer"></span>
-				<span id="testGaugeContainer"></span>
-				<button onclick="getData()">Get Results</button>
-	    </div>
-	        
-	    <div class="view hide" id="page2">
-	            <h1>Page 2</h1>
-	    </div>
+		    <div class="view" id="page1">
+		            <h1></h1>
+		            <button onclick="getData()">Get Results</button>
+		            <div id="graph"></div>
+					<span id="attentionGaugeContainer"></span>
+					
+		    </div>
+		        
+		    <div class="view hide" id="page2">
+		            <h1>Page 2</h1>
+		    </div>
 
-	    <div class="view hide" id="page3">
-	            <h1>Page 3</h1>
-	    </div>
+		    <div class="view hide" id="page3">
+		            <h1>Page 3</h1>
+		    </div>
 
-    </div>
+	    </div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.0/ui-bootstrap.min.js"></script>
 		<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
 		<script type="text/javascript" src="gauge.js"></script>
 		<script type="text/javascript" src="line.js"></script>
