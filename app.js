@@ -8,8 +8,5 @@ $(document).ready(function (e) {
             e.preventDefault();
             var viewName = $(this).attr('data-launch-view');
             showView(viewName);
-        });
-
-     
-    });
-    });
+        });  
+});

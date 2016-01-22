@@ -78,9 +78,12 @@ function getGraph5Data() {
       for (var i = 0; i <= xdomain; i++) {
         attentionValue = attentionValues[i][2];   
         d1.push([i, attentionValue]);
+        // appreciationValue = appreciationValues[i][2];   
+        // d2.push([i, appreciationValue]);
       }
 
       data.push(d1);
+      // data.push(d2);
 
       var line = d3.svg.line()
       .interpolate("basis")

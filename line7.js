@@ -1,9 +1,9 @@
-function getGraph6Data() {
+function getGraph7Data() {
     var data = [];
     var bandPos = [-1, -1];
     var pos;
     var xdomain = 50;
-    var ydomain = 4;
+    var ydomain = 100;
     var colors = ["steelblue", "green"];
 
     var margin = {
@@ -24,7 +24,7 @@ function getGraph6Data() {
 
     //data for testing
     
-    var svg = d3.select("#graph6").append("svg")
+    var svg = d3.select("#graph7").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -47,7 +47,7 @@ function getGraph6Data() {
 
     svg.append("text")
       .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
-      .attr("transform", "translate("+(width/2)+","+(height-(margin.bottom/3))+")")  // centre below axis
+      .attr("transform", "translate(200,250)")  // centre below axis
       .text("Time (s)");
     
     var band = svg.append("rect")
@@ -76,8 +76,8 @@ function getGraph6Data() {
       var d1 = [];
       var d2 = [];
       for (var i = 0; i <= xdomain; i++) {
-        appreciationValue = appreciationValues[i][2];   
-        d1.push([i, appreciationValue]);
+        attentionValue = attentionValues[i][2];   
+        d1.push([i, attentionValue]);
       }
 
       data.push(d1);

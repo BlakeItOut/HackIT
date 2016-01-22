@@ -289,6 +289,10 @@ var gauges = [];
 				createGauge("appreciationAverage", "",0,4,2,5,.5,.75);
 				createGauge("attentionGroupAverage", "",0,100,2,6,.4,.8);
 				createGauge("appreciationGroupAverage", "",0,4,2,5,.5,.75);
+				createGauge("attention1Average", "",0,100,2,6,.4,.8);
+				createGauge("appreciation1Average", "",0,4,2,5,.5,.75);
+				createGauge("attention2Average", "",0,100,2,6,.4,.8);
+				createGauge("appreciation2Average", "",0,4,2,5,.5,.75);
 				// createGauge("meditation", "Meditation");
 				// createGauge("familiarity", "Familiarity",0,5,1);
 				//createGauge("test", "Test", -50, 50 );
@@ -300,12 +304,14 @@ var gauges = [];
 			{
 				var value = attentionValues[i][2];
 				// gauges["attention"].redraw(value);
-				console.log(attentionValuesAverage);
-				console.log(appreciationValuesAverage);
 				gauges["attentionAverage"].redraw(attentionValuesAverage)
 				gauges["appreciationAverage"].redraw(appreciationValuesAverage)
-				gauges["attentionGroupAverage"].redraw(attentionValuesAverage)
-				gauges["appreciationGroupAverage"].redraw(appreciationValuesAverage)
+				gauges["attentionGroupAverage"].redraw(attentionGroupValuesAverage)
+				gauges["appreciationGroupAverage"].redraw(appreciationGroupValuesAverage)
+				gauges["attention1Average"].redraw(attentionValuesAverage)
+				gauges["appreciation1Average"].redraw(appreciationValuesAverage)
+				gauges["attention2Average"].redraw(attentionValuesAverage)
+				gauges["appreciation2Average"].redraw(appreciationValuesAverage)
 				i += 1;
 			}
 			

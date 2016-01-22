@@ -1,4 +1,4 @@
-function getGraph4Data() {
+function getGraph8Data() {
     var data = [];
     var bandPos = [-1, -1];
     var pos;
@@ -24,7 +24,7 @@ function getGraph4Data() {
 
     //data for testing
     
-    var svg = d3.select("#graph4").append("svg")
+    var svg = d3.select("#graph8").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -76,7 +76,7 @@ function getGraph4Data() {
       var d1 = [];
       var d2 = [];
       for (var i = 0; i <= xdomain; i++) {
-        appreciationValue = appreciationGroupValues[i][2];   
+        appreciationValue = appreciationValues[i][2];   
         d1.push([i, appreciationValue]);
       }
 
