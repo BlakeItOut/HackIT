@@ -1,4 +1,4 @@
-function getGraph2Data() {
+function getGraph6Data() {
     var data = [];
     var bandPos = [-1, -1];
     var pos;
@@ -24,7 +24,7 @@ function getGraph2Data() {
 
     //data for testing
     
-    var svg = d3.select("#graph2").append("svg")
+    var svg = d3.select("#graph6").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")

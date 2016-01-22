@@ -12,8 +12,8 @@ function getGraphData() {
       bottom: 50,
       left: 60
     }
-    var width = 760 - margin.left - margin.right;
-    var height = 450 - margin.top - margin.bottom;
+    var width = 500 - margin.left - margin.right;
+    var height = 300 - margin.top - margin.bottom;
     var zoomArea = {
       x1: 0,
       y1: 0,

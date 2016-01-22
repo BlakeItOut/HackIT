@@ -265,7 +265,7 @@ var gauges = [];
 			{
 				var config = 
 				{
-					size: 100,
+					size: 200,
 					label: label,
 					min: undefined != min ? min : 0,
 					max: undefined != max ? max : 100,

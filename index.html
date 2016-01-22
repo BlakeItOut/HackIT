@@ -42,9 +42,19 @@
 			  .hide
         	  {
             	display: none;
-        	  }		
+        	  }	
+        	  .show 
+        	  {
+        	  	display: block;
+        	  }	
         	  #lotOfPages{
         	  	margin-top: 100px;
+        	  }
+        	  #menu2{
+        	  	text-align: center;
+        	  }
+        	   #home{
+        	  	text-align: center;
         	  }
 
         </style>		
@@ -110,7 +120,7 @@
     </div>
 
     <div>
- <button type="button" class="btn btn-warning btn-lg btn-block" id="show" >Get Results!</button>
+ <button class="btn btn-warning btn-lg btn-block" onclick="getData()">Get Results!</button>
     </div>
         <!-- /.container -->
 <!-- <div id="rock" class="view">
@@ -122,7 +132,7 @@ src="https://www.youtube.com/embed/pUjezPJGRIE?autoplay=false">
 
 </div> -->
 <a name="contact"></a>
-<div class="container" id="div1" class="initiallyHidden">
+<div class="container hide" id="div1">
   <h1 align="center">Analysis</h1>
   <hr class="intro-divider">
   <ul class="nav nav-tabs">
@@ -134,36 +144,26 @@ src="https://www.youtube.com/embed/pUjezPJGRIE?autoplay=false">
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-		<button onclick="getData()">Get Results</button>
-        <table id="GaugeTable">
-            <tr>
-                <td>Attention</td>
-                <td>Appreciation</td>
-            </tr>
-            <tr>
-                <td><span id="attentionAverageGaugeContainer"></span></td>
-                <td><span id="appreciationAverageGaugeContainer"></span></td>
-            </tr>
-        </table>	
-		
-        <div id="graph"></div>
-        <div id="graph2"></div>
+     <div class="row">
+    		<div class="col-md-6">Attention</div><div class="col-md-6">Appreciation</div>
+  		</div>
+  		<div class="row">
+    		<div class="col-md-6"><span id="attentionAverageGaugeContainer"></span></div><div class="col-md-6"><span id="appreciationAverageGaugeContainer"></span></div>
+    	</div>
+  		<div class="row">
+  		  	<div class="col-md-6" id ="graph"></div><div class="col-md-6" id ="graph2"></div>
+  		</div>
     </div>
     <div id="menu2" class="tab-pane fade">
-     	<button onclick="getData()">Get Results</button>
-        <table id="GaugeTable">
-            <tr>
-                <td>Attention</td>
-                <td>Appreciation</td>
-            </tr>
-            <tr>
-                <td><span id="attentionGroupAverageGaugeContainer"></span></td>
-                <td><span id="appreciationGroupAverageGaugeContainer"></span></td>
-            </tr>
-        </table>    
-        
-        <div id="graph3"></div>
-        <div id="graph4"></div>
+    	<div class="row">
+    		<div class="col-md-6">Attention</div><div class="col-md-6">Appreciation</div>
+  		</div>
+  		<div class="row">
+    		<div class="col-md-6"><span id="attentionGroupAverageGaugeContainer"></span></div><div class="col-md-6"><span id="appreciationGroupAverageGaugeContainer"></span></div>
+    	</div>
+  		<div class="row">
+  		  	<div class="col-md-6" id ="graph3"></div><div class="col-md-6" id ="graph4"></div>
+  		</div>
     </div>
     <div id="menu3" class="tab-pane fade">
       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
@@ -188,7 +188,7 @@ src="https://www.youtube.com/embed/pUjezPJGRIE?autoplay=false">
                                 <a href="#/#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Chef's Spot 2015. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; BrainIT 2015. All Rights Reserved</p>
                 </div>
             </div>
         </div>
@@ -223,16 +223,7 @@ src="https://www.youtube.com/embed/pUjezPJGRIE?autoplay=false">
    <!--   // <script src="bootstrap.min.js"></script> -->
 <!--  // <script src="example.js"></script> -->
  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <script>
-    	   $(document).ready(function(){
-    $("#show").click(function(e){
-    	e.preventDefault();
-        $("#div1").toggle();
-   });
-
-});
-        </script>
+ 
   
 	</body>
 </html>

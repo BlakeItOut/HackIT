@@ -11,7 +11,8 @@
 			 //csv dataset as objects	
 
 			function getData() {
-
+				$("#div1").removeClass("hide");
+				window.location.href = "#contact";
 				d3.text("attention.csv", function(text) {
     				attentionValues = d3.csv.parseRows(text)
         			getGraphData();
