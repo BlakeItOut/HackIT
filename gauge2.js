@@ -274,7 +274,7 @@ var gauges = [];
 				}
 				
 				var range = config.max - config.min;
-				config.redZones = [{ from: 0, to: config.min + range*lowTop }];
+				config.redZones = [{ from: -100, to: config.min + range*lowTop }];
 				config.yellowZones = [{ from: config.min + range*lowTop, to: config.min + range*midTop }];
 				config.greenZones = [{ from: config.min + range*midTop, to: config.max }];
 				
@@ -285,8 +285,8 @@ var gauges = [];
 			function createGauges()
 			{
 				// createGauge("attention", "Attention");
-				createGauge("attentionAverage", "",0,100,2,6,.4,.8);
-				createGauge("appreciationAverage", "",0,4,2,5,.5,.75);
+				createGauge("attentionAverage", "",-100,100,2,10,.33,.66);
+				createGauge("appreciationAverage", "",-100,100,2,10,.33,.66);
 				createGauge("attentionGroupAverage", "",0,100,2,6,.4,.8);
 				createGauge("appreciationGroupAverage", "",0,4,2,5,.5,.75);
 				// createGauge("meditation", "Meditation");

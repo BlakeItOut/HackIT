@@ -13,7 +13,7 @@ function getGraph7Data() {
       left: 60
     }
     var width = 500 - margin.left - margin.right;
-    var height = 300 - margin.top - margin.bottom;
+    var height = 250 - margin.top - margin.bottom;
     var zoomArea = {
       x1: 0,
       y1: 0,
@@ -102,8 +102,8 @@ function getGraph7Data() {
 
       var curtain = svg.append('rect')
         .attr('x', -1 * 760)
-        .attr('y', -1 * 450)
-        .attr('height', 450)
+        .attr('y', -1 * 250)
+        .attr('height', 250)
         .attr('width', 760)
         .attr('class', 'curtain')
         .attr('transform', 'rotate(180)')
